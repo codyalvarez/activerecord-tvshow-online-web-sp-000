@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
   def self.most_popular_show
     # self.where('highest_rating' => true)
     # self.highest_rating: SELECT * FROM shows WHERE shows.highest_rating = ? LIMIT ?
-    self.where("highest_rating")
+    self.where("highest_rating > ?")
   end
 
   def self.lowest_rating
